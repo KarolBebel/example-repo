@@ -5,6 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
+      - name: get files
+        id: files
+        uses: jitterbit/get-changed-files@v1
+        run: |
+          for changed_file in ${{ steps.files.outputs.all }}; do
+            echo "Do something with this ${changed_file}."
+          done
       - name: Hello world action step
         id: hello
         uses: KarolBebel/hello-world-javascript-action@v1.1
