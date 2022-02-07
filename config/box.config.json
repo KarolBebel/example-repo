@@ -1,0 +1,5 @@
+{
+    "slots": ["isNull"],
+    "title": ["isNull"],
+    "number": ["isNumber"]
+}
