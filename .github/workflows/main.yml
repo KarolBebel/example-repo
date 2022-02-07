@@ -1,17 +1,23 @@
 on: [push]
 
 jobs:
-  hello_world_job:
-    runs-on: ubuntu-latest
-    name: A job to say hello
+  upload:
+    runs-on: [self-hosted, ubuntu-latest]
+
+    name: validate prototypes
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Hello world main step
+      - name: Validate prototype
         id: hello
-        uses: KarolBebel/hello-world-javascript-action@v1.9
+        uses: KarolBebel/hello-world-javascript-action@v2.0
         with:
-          who-to-greet: 'config/box.config.json'
+          data-source-config: 'config/dataSource.config.json'
+          data-type-config: 'config/dataType.config.json'
+          box-config: 'config/box.config.json'
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
+
+
+        # uses: KarolBebel/hello-world-javascript-action@v1.9
