@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Validate prototype
         id: hello
-        uses: KarolBebel/hello-world-javascript-action@v.2.1
+        uses: KarolBebel/hello-world-javascript-action@v2.2
         with:
           data-source-config: 'config/dataSource.config.json'
           data-type-config: 'config/dataType.config.json'
