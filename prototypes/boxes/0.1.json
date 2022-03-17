@@ -1,6 +1,6 @@
 {
     "number": 1,
-    "slots": [""],
+    "slots": ["test2"],
     "parameters": [],
     "title": "",
     "description": "Partial to be used on pages when rodo consent modal should appear.",
